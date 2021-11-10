@@ -43,6 +43,7 @@ const SearchForm: FunctionComponent = () => {
                     name="findTeam"
                     onChange={onchange}
                     ref={formAddressRef}
+                    // eslint-disable-next-line max-len
                     className="rounded m-1 w-28 py-1 bg-gray-300 hover:bg-gray-400"
                   />
                 </div>

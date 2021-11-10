@@ -1,7 +1,7 @@
 import { useEffect, FunctionComponent } from "react";
 
 declare global {
-  interface Window { // eslint-disable-line no-unused-vars
+  interface Window /* eslint-disable-line no-unused-vars */ {
     kakao: any;
   }
 }
@@ -10,9 +10,26 @@ interface Iprops {
   place?: string;
 }
 
+interface Idata {
+  addressname: string;
+  categorygroupcode: string;
+  categorygroupname: string;
+  categoryname: string;
+  distance: string;
+  id: string;
+  phone: string;
+  placename: string;
+  placeurl: string;
+  roadaddressname: string;
+  x: string;
+  y: string;
+}
+
 export const Map: FunctionComponent<Iprops> = ({ place }) => {
   const script = document.createElement("script");
-  script.src = "//dapi.kakao.com/v2/maps/sdk.js?appkey=fad553177d7a8806ee6c78203a18e649&libraries=services&autoload=false";
+  script.src =
+    // eslint-disable-next-line max-len
+    "//dapi.kakao.com/v2/maps/sdk.js?appkey=fad553177d7a8806ee6c78203a18e649&libraries=services&autoload=false";
   document.head.appendChild(script);
   // kakao map api script
   useEffect(() => {
@@ -30,14 +47,15 @@ export const Map: FunctionComponent<Iprops> = ({ place }) => {
         if (place !== "") {
           const ps = new window.kakao.maps.services.Places();
 
-          ps.keywordSearch(String(place), (data: any[], status: any) => {
+          ps.keywordSearch(String(place), (data: Idata[], status: number) => {
             if (status === window.kakao.maps.services.Status.OK) {
               const bounds = new window.kakao.maps.LatLngBounds();
-              for (let i = 0; i < data.length; i += 1) {
+              // eslint-disable-next-line array-callback-return
+              data.map((kakaoData) => {
                 bounds.extend(
-                  new window.kakao.maps.LatLng(data[i].y, data[i].x),
+                  new window.kakao.maps.LatLng(kakaoData.y, kakaoData.x)
                 );
-              }
+              });
 
               map.setBounds(bounds);
             }
@@ -45,7 +63,7 @@ export const Map: FunctionComponent<Iprops> = ({ place }) => {
         }
       });
     };
-  }, [place]);
+  }, [place, script]);
 
   return (
     <div className="">

@@ -1,5 +1,5 @@
-function FindTeam() : JSX.Element {
-    return <div>hi</div>;
+function FindTeam(): JSX.Element {
+  return <div>hi</div>;
 }
 
 export default FindTeam;
