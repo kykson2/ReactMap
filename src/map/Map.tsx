@@ -28,9 +28,7 @@ interface Idata {
 
 export const Map: FunctionComponent<Iprops> = ({ place }) => {
   const script = document.createElement("script");
-  script.src =
-    // eslint-disable-next-line max-len
-    "//dapi.kakao.com/v2/maps/sdk.js?appkey=fad553177d7a8806ee6c78203a18e649&libraries=services&autoload=false";
+  script.src = `${process.env.REACT_APP_KAKAO_MAP_API}`;
   document.head.appendChild(script);
 
   useEffect(() => {

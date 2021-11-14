@@ -19,7 +19,7 @@ const MakerPosition = (map: Object): Array<IMakerConstructor> => {
     },
   ];
 
-  const imageSize = new window.kakao.maps.Size(24, 35);
+  const imageSize = new window.kakao.maps.Size(30, 30);
   const markerImage = new window.kakao.maps.MarkerImage(MarkerIcon, imageSize);
 
   return positions.map((markers) => {
