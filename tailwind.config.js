@@ -4,7 +4,7 @@ module.exports = {
   // mode: "jit",
   theme: {
     extend: {},
-    height: { "50v": "50vh" },
+    height: { "100v": "100vh" },
   },
   variants: {},
   plugins: [],

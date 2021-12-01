@@ -1,11 +1,14 @@
-import SearchForm from "../map/SearchForm";
+import { useState } from "react";
+import { Map } from "../Map";
+import Search from "../Map/Search";
 
 function App(): JSX.Element {
-  console.log(`${process.env.REACT_APP_KAKAO_MAP_API}`);
+  const [search, setSearch] = useState<string>("");
   return (
-    <div>
-      <SearchForm />
-    </div>
+    <>
+      <Search setSearch={setSearch} />
+      <Map search={search} />
+    </>
   );
 }
 
