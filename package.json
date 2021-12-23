@@ -50,6 +50,7 @@
     "devDependencies": {
         "@types/lodash": "^4.14.176",
         "@types/react-modal": "^3.13.1",
+        "@types/react-redux": "^7.1.20",
         "@typescript-eslint/eslint-plugin": "^5.5.0",
         "@typescript-eslint/parser": "^5.5.0",
         "eslint": "^7.32.0",
@@ -69,6 +70,9 @@
         "react-hook-form": "^7.19.5",
         "react-kakao-maps-sdk": "^1.0.4",
         "react-modal": "^3.14.4",
+        "react-redux": "^7.2.6",
+        "redux": "^4.1.2",
+        "sharekim-kakao-map-types": "^0.0.5",
         "typescript": "^4.4.4"
     }
 }

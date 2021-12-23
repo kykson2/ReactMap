@@ -1,16 +1,14 @@
 import { FunctionComponent } from "react";
-import ModalBtn from "./components/ModalBtn";
+import ModalBtn from "./Modal/ModalBtn";
 import { ViewMap } from "./components/ViewMap";
+import MyLocationBtn from "./Location/MyLocationBtn";
 
-interface Iprops {
-    search: string;
-}
-
-const Map: FunctionComponent<Iprops> = ({ search }) => {
+const Map: FunctionComponent = () => {
     return (
         <div>
-            <ViewMap search={search} />
+            <ViewMap />
             <ModalBtn />
+            <MyLocationBtn />
         </div>
     );
 };

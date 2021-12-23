@@ -1,9 +1,10 @@
-import { Dispatch, SetStateAction } from "react";
+import { useState } from "react";
 import { useForm } from "react-hook-form";
+import { useSelector } from "react-redux";
 import logo from "../../images/icon1.png";
+import SearchMap from "./SearchMap";
 
 interface FormValue {
-    setSearch: Dispatch<SetStateAction<string>>;
     keyword?: string;
 }
 
@@ -11,11 +12,17 @@ interface keyword {
     keyword: string;
 }
 
-const SearchForm = ({ setSearch }: FormValue): JSX.Element => {
+const SearchForm = (): JSX.Element => {
+    const { map } = useSelector((state) => ({ map: state.map }));
+
     const { register, handleSubmit } = useForm<FormValue>();
+    const [Search, setSearch] = useState<string>("");
 
     const onSubmit = (data: keyword): void => {
         setSearch(data.keyword);
+        window.kakao.maps.load(() => {
+            if (Search !== "") SearchMap({ Search, map });
+        });
     };
 
     return (

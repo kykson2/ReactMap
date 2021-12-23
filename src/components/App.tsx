@@ -1,14 +1,14 @@
-import { useState } from "react";
+import { Provider } from "react-redux";
+import store from "store/store";
 import Map from "../Map";
-import Search from "../Map/components/Search";
+import SearchForm from "../Map/Search/SearchForm";
 
 const App = (): JSX.Element => {
-    const [search, setSearch] = useState<string>("");
     return (
-        <>
-            <Search setSearch={setSearch} />
-            <Map search={search} />
-        </>
+        <Provider store={store}>
+            <SearchForm />
+            <Map />
+        </Provider>
     );
 };
 
