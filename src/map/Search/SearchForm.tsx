@@ -13,7 +13,7 @@ interface keyword {
 }
 
 const SearchForm = (): JSX.Element => {
-    const { map } = useSelector((state) => ({ map: state.map }));
+    const { map } = useSelector((state) => ({ map: state.kakaoMap.map }));
 
     const { register, handleSubmit } = useForm<FormValue>();
     const [Search, setSearch] = useState<string>("");
@@ -26,9 +26,9 @@ const SearchForm = (): JSX.Element => {
     };
 
     return (
-        <div>
-            <div className="sm: max-w-sm md: max-w-md lg: max-w-6xl mx-auto ">
-                <div className="flex justify-between space-x-4 bg-gray-200">
+        <div className="relative">
+            <div className="w-full">
+                <div className="flex space-x-4 bg-gray-200">
                     <a href="/" className="flex items-center gap-1 py-2 px-3">
                         <img src={logo} alt="logo" className="h-6 w-6" />
                         <span className="font-bold">COS</span>
@@ -37,18 +37,20 @@ const SearchForm = (): JSX.Element => {
             </div>
 
             {/* input */}
-            <form
-                onSubmit={handleSubmit(onSubmit)}
-                className="relative w-screen bg-gray-200"
-            >
-                <div id="search_bar" className="inset-0">
-                    <input
-                        {...register("keyword")}
-                        id="setSearch"
-                        className="rounded py-1 m-2 bg-gray-300 hover:bg-gray-400"
-                    />
-                </div>
-            </form>
+            <div className="fixed top-0 right-0 m-1">
+                <form
+                    onSubmit={handleSubmit(onSubmit)}
+                    className="bg-gray-200 right-0"
+                >
+                    <div id="search_bar" className="right-0">
+                        <input
+                            {...register("keyword")}
+                            id="setSearch"
+                            className="rounded py-1 right-0 bg-gray-300 hover:bg-gray-400"
+                        />
+                    </div>
+                </form>
+            </div>
         </div>
     );
 };

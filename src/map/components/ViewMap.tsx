@@ -1,14 +1,14 @@
 // global.d.ts
 import { FunctionComponent } from "react";
-import { IKakao } from "sharekim-kakao-map-types";
 import { useDispatch } from "react-redux";
-import MarkerAddress from "Map/Marker/MarkerAddress";
+
 import MarkerDraw from "../Marker/MarkerDraw";
-import { actionCreators } from "../../store/store";
+// import { actionCreators } from "../../store/store";
+import { kakaoMapAction } from "../../store/store";
 
 declare global {
     interface Window {
-        kakao: IKakao;
+        kakao: any;
     }
 }
 
@@ -18,20 +18,18 @@ export const ViewMap: FunctionComponent = () => {
         const container = document.getElementById("container") as HTMLElement;
 
         const options = {
-            center: new window.kakao.maps.LatLng(37.50802, 127.062835),
+            center: new window.kakao.maps.LatLng(37.37, 127.127),
             level: 3,
         };
         const map = new window.kakao.maps.Map(container, options);
         MarkerDraw(map);
-        dispatcher(actionCreators.setMap(map));
+        dispatcher(kakaoMapAction.setMap(map));
     });
-
-    MarkerAddress();
 
     return (
         <div>
             <div className="relative">
-                <div id="container" className="fixed w-screen h-100v" />
+                <div id="container" className="fixed w-screen h-100v z-10" />
             </div>
         </div>
     );

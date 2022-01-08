@@ -13,10 +13,10 @@ const ModalBtn: FunctionComponent = () => {
             {modalOpen && <Modal />}
             <button
                 type="button"
-                className="fixed bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+                className="fixed bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 w-32 right-1/2 transform translate-x-1/2 bottom-5 rounded text-center z-30"
                 onClick={handleOpenModal}
             >
-                더보기
+                {modalOpen ? <>돌아가기</> : <>주변 축구팀</>}
             </button>
         </div>
     );
