@@ -1,4 +1,3 @@
-/* eslint-disable consistent-return */
 import MarkerPosition from "Map/Marker/MarkerPosition";
 import { IKakaoLatLngBounds } from "sharekim-kakao-map-types";
 
@@ -13,10 +12,11 @@ const SearchMap = ({ Search, map }: SearchProps): void => {
     window.kakao.maps.load(() => {
         const ps = new window.kakao.maps.services.Places();
 
-        Marker.forEach((data) => {
+        Marker.map((data): any => {
             if (data.title.indexOf(Search) !== -1) {
                 return map.setCenter(data.latlng);
             }
+            return null;
         });
 
         if (Marker.filter((data) => data.title.indexOf(Search) === -1)) {

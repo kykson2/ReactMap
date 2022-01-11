@@ -5,8 +5,7 @@ import sniperLogo from "../../images/sniper.png";
 import MyLocation from "./MyLocation";
 
 const MyLocationBtn: FunctionComponent = () => {
-    const { map } = useSelector((state) => ({ map: state.kakaoMap.map }));
-    console.log(map);
+    const { map } = useSelector((state) => ({ map: state.setKakaoMap.map }));
 
     const handleMyLocation = (): void => {
         MyLocation(map);

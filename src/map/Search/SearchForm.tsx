@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { useSelector } from "react-redux";
+
 import logo from "../../images/icon1.png";
 import SearchMap from "./SearchMap";
 
@@ -13,7 +14,7 @@ interface keyword {
 }
 
 const SearchForm = (): JSX.Element => {
-    const { map } = useSelector((state) => ({ map: state.kakaoMap.map }));
+    const { map } = useSelector((state) => ({ map: state.setKakaoMap.map }));
 
     const { register, handleSubmit } = useForm<FormValue>();
     const [Search, setSearch] = useState<string>("");
