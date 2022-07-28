@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/ReactMap/static/css/main.6cb02196.chunk.css",
+    "main.js": "/ReactMap/static/js/main.009f1cbb.chunk.js",
+    "main.js.map": "/ReactMap/static/js/main.009f1cbb.chunk.js.map",
+    "runtime-main.js": "/ReactMap/static/js/runtime-main.10969125.js",
+    "runtime-main.js.map": "/ReactMap/static/js/runtime-main.10969125.js.map",
+    "static/js/2.65b5f7df.chunk.js": "/ReactMap/static/js/2.65b5f7df.chunk.js",
+    "static/js/2.65b5f7df.chunk.js.map": "/ReactMap/static/js/2.65b5f7df.chunk.js.map",
+    "index.html": "/ReactMap/index.html",
+    "static/css/main.6cb02196.chunk.css.map": "/ReactMap/static/css/main.6cb02196.chunk.css.map",
+    "static/js/2.65b5f7df.chunk.js.LICENSE.txt": "/ReactMap/static/js/2.65b5f7df.chunk.js.LICENSE.txt",
+    "static/media/icon1.d31e0b4f.png": "/ReactMap/static/media/icon1.d31e0b4f.png",
+    "static/media/location-pin.abf0fdd5.png": "/ReactMap/static/media/location-pin.abf0fdd5.png",
+    "static/media/sniper.fdcd4805.png": "/ReactMap/static/media/sniper.fdcd4805.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.10969125.js",
+    "static/js/2.65b5f7df.chunk.js",
+    "static/css/main.6cb02196.chunk.css",
+    "static/js/main.009f1cbb.chunk.js"
+  ]
+}
