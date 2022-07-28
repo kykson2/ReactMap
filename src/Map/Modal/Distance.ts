@@ -1,8 +1,10 @@
 import { useSelector } from "react-redux";
-import { IKakaoLatLng } from "sharekim-kakao-map-types";
+import { IKakaoLatLng, IKakaoLatLngBounds } from "sharekim-kakao-map-types";
 
 const Distance = (Latlng: IKakaoLatLng): boolean => {
-    const { map } = useSelector((state) => ({ map: state.setKakaoMap.map }));
+    const { map } = useSelector((state: any) => ({
+        map: state.setKakaoMap.map,
+    }));
 
     let bool = true;
 

@@ -1,4 +1,4 @@
-const MyLocation = (map: any): void => {
+const myLocation = (map: any): void => {
     let lat: number;
     let lon: number;
 
@@ -13,4 +13,4 @@ const MyLocation = (map: any): void => {
     }
 };
 
-export default MyLocation;
+export default myLocation;

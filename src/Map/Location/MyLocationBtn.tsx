@@ -2,13 +2,15 @@ import { FunctionComponent } from "react";
 import { useSelector } from "react-redux";
 import sniperLogo from "../../images/sniper.png";
 
-import MyLocation from "./MyLocation";
+import myLocation from "./myLocation";
 
 const MyLocationBtn: FunctionComponent = () => {
-    const { map } = useSelector((state) => ({ map: state.setKakaoMap.map }));
+    const { map } = useSelector((state: any) => ({
+        map: state.setKakaoMap.map,
+    }));
 
     const handleMyLocation = (): void => {
-        MyLocation(map);
+        myLocation(map);
     };
     return (
         <div>

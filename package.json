@@ -20,7 +20,8 @@
         "react": "^17.0.2",
         "react-dom": "^17.0.2",
         "react-scripts": "4.0.3",
-        "tailwindcss": "^2.2.19"
+        "tailwindcss": "^2.2.19",
+        "vercel": "^27.3.0"
     },
     "scripts": {
         "start": "run-p watch:css react-scripts:start",
@@ -64,6 +65,7 @@
         "eslint-plugin-react": "^7.27.1",
         "eslint-plugin-react-hooks": "^4.3.0",
         "eslint-plugin-react-prefer-function-component": "^0.0.7",
+        "gh-pages": "^4.0.0",
         "kakao.maps.d.ts": "^0.1.24",
         "lodash": "^4.17.21",
         "prettier": "2.4.1",

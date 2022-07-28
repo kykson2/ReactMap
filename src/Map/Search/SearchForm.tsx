@@ -14,7 +14,9 @@ interface keyword {
 }
 
 const SearchForm = (): JSX.Element => {
-    const { map } = useSelector((state) => ({ map: state.setKakaoMap.map }));
+    const { map } = useSelector((state: any) => ({
+        map: state.setKakaoMap.map,
+    }));
 
     const { register, handleSubmit } = useForm<FormValue>();
     const [Search, setSearch] = useState<string>("");

@@ -6,7 +6,9 @@ import MyLocationBtn from "./Location/MyLocationBtn";
 import ModalPortal from "./Modal/ModalPortal";
 
 const Map: FunctionComponent = () => {
-    const isMarkerPortal = useSelector((state) => state.markerPortal.portal);
+    const isMarkerPortal = useSelector(
+        (state: any) => state.markerPortal.portal
+    );
     return (
         <div>
             <ViewMap />

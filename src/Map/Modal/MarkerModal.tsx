@@ -3,10 +3,9 @@ import ReactDOM from "react-dom";
 import { useSelector } from "react-redux";
 
 const MarkerModal: FunctionComponent = () => {
-    const { data } = useSelector((state) => ({
+    const { data } = useSelector((state: any) => ({
         data: state.markerData.data,
     }));
-    console.log(data);
     const el = document.getElementById("markerPortal");
 
     const content = (
